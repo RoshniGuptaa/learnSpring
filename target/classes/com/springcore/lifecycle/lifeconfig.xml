@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  https://www.springframework.org/schema/context
+  https://www.springframework.org/schema/beans/spring-context.xsd">
+  
+  
+  <!-- This is bean Shampoo-->
+  <bean class="com.springcore.lifecycle.Shampoo" name="prd1" init-method="init" destroy-method="destroy"  >
+  <property name="price" value="360" ></property>
+  </bean>
+  
+  <!-- This is conditioner bean using lifecycle interfaces-->
+  <bean class="com.springcore.lifecycle.Conditioner" name="prd2" >
+    <property name="price" value="120"></property>
+  </bean>
+  
+  <!-- This is bean using lifecycle annotation-->
+  <bean class="com.springcore.lifecycle.Mask" name="prd3" init-method="start" destroy-method="stop">
+  <property name="price" value="1200"></property>
+  
+  </bean>
+</beans>
